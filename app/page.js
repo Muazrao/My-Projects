@@ -138,7 +138,7 @@ function Cart() {
         <div className="flex items-center justify-center">
           <button
             onClick={() => setSidebarOpen(true)}
-            className="md:hidden flex items-center gap-2 pl-1 pr-3  hover:bg-gray-100 transition"
+            className="md:hidden pl-1 pr-3 hover:bg-gray-100 transition"
           >
             <MenuOutlined className="text-lg" />
             {/* <span className="text-sm font-medium">Menu</span> */}
