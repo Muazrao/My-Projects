@@ -15,6 +15,7 @@ import data from "./cart.json";
 import Head from "next/head";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 
+
 function Cart() {
   const [searchValue, setSearchValue] = useState("");
   const [count, setCount] = useState(Array(data.length).fill(1));
@@ -79,7 +80,7 @@ function Cart() {
         </div>
 
         {/* Main Menu */}
-        <div className="flex flex-col px-4 py-5 space-y-4 border-b border-gray-100">
+        <div className=" flex flex-col px-4 py-5 space-y-4 border-b border-gray-100">
           {[
             "Fire Pits",
             "Pizza Ovens",
@@ -146,7 +147,7 @@ function Cart() {
 
           <img className="w-32" src={logo} alt="logo" />
         </div>
-        <div className="hidden md:flex items-center space-x-2 text-sm">
+        <div className="hidden md:flex items-center space-x-1.5 md:text-[.8125rem] text-[#1a1a1a]">
           {[
             "Rewards",
             "Gift Cards",
@@ -167,7 +168,7 @@ function Cart() {
       </nav>
 
       {/* Menu bar */}
-      <div className="hidden md:flex fixed top-14 left-0 w-full bg-white border-b border-gray-300 py-3 px-4 z-20">
+      <div className="hidden md:flex md:justify-between items-center fixed top-11 left-0 w-full bg-white border-b border-gray-300 py-3 px-4 z-20">
         <div className="flex space-x-4">
           {[
             "Fire Pits",
@@ -186,10 +187,40 @@ function Cart() {
             </p>
           ))}
         </div>
+        <div className="flex items-center ">
+            <Input
+              id="Searchbar"
+              placeholder="Search"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              className=" border-none p-3 py-3"
+              prefix={<SearchOutlined className="text-gray-500" />}
+              suffix={
+                searchValue && (
+                  <CloseCircleOutlined
+                    className="text-gray-400 hover:text-red-500 cursor-pointer"
+                    onClick={() => setSearchValue("")} // Clears input on click
+                  />
+                )
+              }
+            />
+            <div
+              id="User-icon"
+              className=" hover:text-orange-600 cursor-pointer  text-[20px] mr-4 ml-4 "
+            >
+              <UserOutlined />
+            </div>
+            <div
+              id="Cart-icon"
+              className=" hover:text-orange-600 cursor-pointer text-[20px] mr-7 "
+            >
+              <ShoppingCartOutlined />
+            </div>
+          </div>
       </div>
 
       {/* Top bar with search & icons */}
-      <div className="fixed top-[40px] left-0 w-full bg-white border-b border-gray-300 flex justify-between items-center py-3 px-4 z-20">
+      <div className="fixed top-[40px] md:hidden left-0 w-full bg-white border-b border-gray-300 flex justify-between items-center py-3 px-4 z-20">
         <Input
           placeholder="Search"
           value={searchValue}
@@ -204,22 +235,22 @@ function Cart() {
             )
           }
         />
-        <div className="flex items-center space-x-4 text-xl">
+        <div className="flex items-center space-x-4 text-lg">
           <UserOutlined className="hover:text-orange-500 cursor-pointer" />
           <ShoppingCartOutlined className="hover:text-orange-500 cursor-pointer" />
         </div>
       </div>
 
-      <div className="w-full flex flex-col md:flex-row mt-36 px-4 md:px-16">
+      <div className="w-full flex flex-col md:flex-row mt-30 px-4 md:px-16">
         {/* Cart items and subtotal */}
-        <div id="cart-items-and-subtotal-div" className="w-full md:w-[60%]">
-          <h1 className="font-bold text-3xl md:text-4xl mb-3">Cart</h1>
-          <h1 className="text-base md:text-lg mb-6">
+        <div id="cart-items-and-subtotal-div" className="w-full md:w-[68%]">
+          <h1 className="font-bold text-3xl md:text-[2rem]">Cart</h1>
+          <h1 className=" md:text-[100%] mb-6">
             <b>Subtotal (</b>
             <span>{totalItems} items</span>
             <b>): ${totalPrice}</b>
           </h1>
-          <b className="text-lg md:text-xl">Items in Cart</b>
+          <b className="text-lg md:text-[1.25rem]">Items in Cart</b>
 
           <div className="w-full">
             {cartItems.map((item, i) => (
@@ -239,7 +270,7 @@ function Cart() {
                   className="mt-2 md:mt-0 ml-0 md:ml-4 flex justify-between w-full"
                 >
                   <div>
-                    <h1 className="font-bold text-lg md:text-xl mb-1">
+                    <h1 className="font-bold text-lg md:text-[1.125rem] mb-1">
                       {item.title}
                     </h1>
                     {item.size && (
@@ -286,7 +317,7 @@ function Cart() {
                       </button>
                     </div>
                   </div>
-                  <div className="font-bold flex items-center text-lg md:text-xl">
+                  <div className="font-bold flex items-center text-lg">
                     ${item.price}
                   </div>
                 </div>
@@ -296,9 +327,9 @@ function Cart() {
         </div>
 
         {/* Order summary */}
-        <div className="w-full md:w-[30%] mt-10 md:mt-0 md:ml-10">
+        <div className="md:fixed md:top-30 md:right-5 w-full md:w-[30%] mt-10 md:mt-0 md:ml-10">
           {totalPrice > 199 ? (
-            <p className="pb-1 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[5px] after:bg-orange-600 after:rounded-[10px]">
+            <p className="text-[.875rem] pb-1 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[5px] after:bg-orange-600 after:rounded-[10px]">
               Congrats, you're eligible for <b>Free Shipping</b>
               <span className="ml-2">
                 <LocalShippingIcon />
@@ -312,20 +343,20 @@ function Cart() {
               </span>
             </p>
           )}
-          <h1 className="text-xl font-bold mt-3">Order Summary</h1>
-          <div className="flex justify-between mt-2 text-base md:text-lg">
+          <h1 className="text-[1.25rem] font-bold mt-3">Order Summary</h1>
+          <div className="flex justify-between mt-2 text-base md:text-[.875rem]">
             <p>Subtotal:</p>
             <p>${totalPrice}</p>
           </div>
-          <div className="flex justify-between mt-2 text-base md:text-lg">
+          <div className="flex justify-between mt-2 text-base md:text-[.875rem]">
             <p>Shipping</p>
             {totalPrice > 199 ? <p>FREE</p> : <p>${shipping}</p>}
           </div>
-          <div className="flex justify-between mt-2 border-b border-gray-300 pb-2 text-sm md:text-base">
+          <div className="flex justify-between mt-2 border-b border-gray-300 pb-2 text-sm md:text-[.875rem]">
             <p>Estimated Tax:</p>
             <p>Calculated at checkout</p>
           </div>
-          <div className="flex justify-between mt-3 font-bold text-lg md:text-xl">
+          <div className="flex justify-between mt-3 font-bold text-lg md:text-[1rem]">
             <h1>Total</h1>
             {totalPrice > 199 ? (
               <h1>${totalPrice}</h1>
@@ -341,8 +372,8 @@ function Cart() {
               className="w-[70px]"
             />
             <span>
-              <p className="underline text-sm md:text-base ml-2">
-                As low as $27.20/mo{" "}
+              <p className="underline text-sm text-[#2c2e2f] md:text-[12px] ml-2">
+                As low as $27.20/mo at 0% APR. {" "}
                 <a href="http://www.google.com" className="text-blue-500 ">
                   Learn more
                 </a>
