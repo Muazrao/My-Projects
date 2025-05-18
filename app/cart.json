@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "title": "Heat Deflector Carry Bag",
+        "image": "https://content.solostove.com/image/upload/c_pad,h_160,w_160/f_auto/dpr_auto/q_auto/v1/transform/226a9332-e21e-49a9-ba24-b32a515468f4/HDCC-Ranger",
+        "price":44.99,
+        "size": "Ranger"
+    },
+    {
+        "id": 2,
+        "title": "Pi Prime Essential Bundle",
+        "image": "https://content.solostove.com/image/upload/c_pad,h_160,w_160/f_auto/dpr_auto/q_auto/ivgitcugomclhenabgcu",
+        "price": 449.99,
+        "color": "Grey"
+    },
+    {
+        "id": 3,
+        "title": "Neapolitan Dough Balls",
+        "image": "https://content.solostove.com/image/upload/c_pad,h_160,w_160/f_auto/dpr_auto/q_auto/v1/transform/c02c7eb0-c11d-4ac9-a844-6e6a6a616fb8/Pi-SUPPLY_Neopolitan-Pizza-Dough-Kit-On-White",
+        "price": 109.99
+    },
+    {
+        "id": 4,
+        "title": "Heat Deflector",
+        "image": "https://content.solostove.com/image/upload/c_fill,h_405,w_405/f_auto/dpr_auto/q_auto/v1/transform/330ab890-a972-48c7-8c8d-9f7bce0ac0d6/HEAT-DEFLECTOR_Ranger_Tall-1",
+        "price": 124.99
+    },
+    {
+        "id": 5,
+        "title": "Pizza Oven Cart",
+        "image": "https://content.solostove.com/image/upload/c_pad,h_160,w_160/f_auto/dpr_auto/q_auto/v1/transform/2231e722-8213-49a8-a8a7-733ae126c63e/PDP_Pi-Cart_Empty",
+        "price": 229.99
+    },
+    {
+        "id": 6,
+        "title": "Pi Shelter",
+        "image": "https://content.solostove.com/image/upload/c_pad,h_160,w_160/f_auto/dpr_auto/q_auto/v1/transform/0fe11c6d-1336-420c-a0ea-e9b30343638a/SSPi_Accessories_Shelter-Gray",
+        "price": 34.99,
+         "color": "Grey"
+    }
+]
