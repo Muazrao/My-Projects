@@ -135,10 +135,10 @@ function Cart() {
 
       {/* Navbar */}
       <nav className="fixed bg-white top-0 left-0 flex items-center justify-between w-full h-auto border-b border-gray-300 pb-1 z-30 px-4">
-        <div className="flex items-center">
+        <div className="flex items-center justify-center">
           <button
             onClick={() => setSidebarOpen(true)}
-            className="md:hidden flex items-center gap-2 px-3  hover:bg-gray-100 transition"
+            className="md:hidden flex items-center gap-2 pl-1 pr-3  hover:bg-gray-100 transition"
           >
             <MenuOutlined className="text-lg" />
             {/* <span className="text-sm font-medium">Menu</span> */}
